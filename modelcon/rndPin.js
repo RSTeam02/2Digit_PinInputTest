@@ -9,15 +9,15 @@
 
 class RandomPin {
     generate() {
-        var element = [...Math.floor((Math.random() * 8999) + 1000).toString()];
+        let element = Math.floor((Math.random() * 8999) + 1000).toString();
 
-        for (let i = 0; i < element.length - 1; i++) {
-            for (let j = i; j < element.length; j++) {
-                if (element[i] === element[j + 1]) {
+        for (let i = 0; i < element.length; i++) {
+            for (let j = i; j < element.length - 1; j++) {
+                if (element.charAt(i) === element.charAt(j + 1)) {
                     return this.generate();
-                } else {
+                } else {             
                     if (element.length - 2 === i) {
-                        return element.join("");
+                        return element;
                     }
                 }
             }

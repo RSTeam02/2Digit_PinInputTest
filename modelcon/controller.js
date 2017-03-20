@@ -44,6 +44,7 @@ class Controller {
     initView(seq) {
         this.view = new View(seq, 10);
         this.newPin();
+       
         this.view.pinInfo(this.getPin());
         this.view.svgMat(this.tileArr);
     }
